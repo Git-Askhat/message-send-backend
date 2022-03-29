@@ -5,16 +5,16 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  const API_SERVICE_URL = 'https://message-send-app.herokuapp.com/';
+  // const API_SERVICE_URL = 'https://message-send-app.herokuapp.com/';
 
-  module.exports = function (app) {
-    app.use('/api',
-      createProxyMiddleware({
-        target: API_SERVICE_URL,
-        changeOrigin: true,
-      }),
-    );
-  };
+  // module.exports = function (app) {
+  //   app.use('/api',
+  //     createProxyMiddleware({
+  //       target: API_SERVICE_URL,
+  //       changeOrigin: true,
+  //     }),
+  //   );
+  // };
   await app.listen(process.env.PORT || 8000);
 }
 bootstrap();
