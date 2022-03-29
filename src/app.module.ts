@@ -17,8 +17,10 @@ import { FeedModule } from './feed/feed.module';
       database: process.env.POSTGRES_DATABASE,
       autoLoadEntities: true,
       synchronize: true,
-      logging: false,
-      entities: ['dist/**/*.entity{.ts,.js}'],
+      extra: {
+        rejectUnauthorized: false
+      },
+      entities: [],
     }),
     FeedModule,],
   controllers: [AppController],
