@@ -6,7 +6,8 @@ import { AppService } from './app.service';
 import { FeedModule } from './feed/feed.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }),
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       url: process.env.DATABASE_URL,
       type: 'postgres',
@@ -18,11 +19,14 @@ import { FeedModule } from './feed/feed.module';
       autoLoadEntities: true,
       synchronize: true,
       extra: {
-        rejectUnauthorized: false
+        ssl: {
+          rejectUnauthorized: false,
+        },
       },
-      entities: [],
+      // entities: [],
     }),
-    FeedModule,],
+    FeedModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
