@@ -8,7 +8,7 @@ async function bootstrap() {
   const API_SERVICE_URL = 'https://message-send-app.herokuapp.com/';
 
   module.exports = function (app) {
-    app.use(
+    app.use('/data',
       createProxyMiddleware({
         target: API_SERVICE_URL,
         changeOrigin: true,
