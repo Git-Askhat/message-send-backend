@@ -5,7 +5,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  const API_SERVICE_URL = "https://message-send-app.herokuapp.com/data";
+  const API_SERVICE_URL = "https://message-send-app.herokuapp.com/";
   app.use('/json_placeholder', createProxyMiddleware({
     target: API_SERVICE_URL,
     changeOrigin: true,
