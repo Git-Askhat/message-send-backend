@@ -25,6 +25,7 @@
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+####View all data: /data, Delete /data/{id}
 
 ## Installation
 
